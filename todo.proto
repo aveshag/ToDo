@@ -1,0 +1,32 @@
+// Schema
+syntax = "proto3";
+
+// defining package name
+package todoPackage;
+
+// package include multiple services
+// Four type of services
+// 1. request and response
+// 2. request and streaming response
+// 3. streaming request and response
+// 4. streaming request and streaming response
+service Todo {
+    rpc createTodo(TodoText) returns (TodoItem);
+    // There is no void in protbuf
+    rpc readTodos(noParam) returns (TodoItems);
+}
+
+message noParam {}
+
+message TodoText {
+    string text = 1;
+}
+
+message TodoItem {
+    string id = 1;
+    string text = 2;
+}
+
+message TodoItems {
+    repeated TodoItem items = 1; // Array
+}
