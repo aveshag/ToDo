@@ -13,8 +13,8 @@ python -m flask --app client run
 Get all todos
 
 ## Add todo
-/todo/<text>
+/todo/text
 
-Replace <text> with content of Todo.
+Replace 'text' with content of Todo.
 
 UUID is returned on successfully creation of Todo
